@@ -1,8 +1,8 @@
 import { getCanvasContext } from "./helpers/canvas";
-import { createSawtoothFourier } from "./helpers/fourier";
+import { createSawtoothFourier, createTriangleFourier } from "./helpers/fourier";
 import waveFromCircles from "./sims/waveFromCircles";
 
 const ctx = getCanvasContext(1280, 720);
-const arr = createSawtoothFourier(10, 70)
+const arr = createTriangleFourier(10, 70)
 
 waveFromCircles(ctx, arr);
