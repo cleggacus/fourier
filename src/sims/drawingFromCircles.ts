@@ -53,7 +53,7 @@ const drawingFromCircles = (ctx: CanvasRenderingContext2D, arr: Complex[]) => {
         for(let i = 0; i < seq.length; i++) {
             const [x, y] = seq[i];
 
-            ctx.strokeStyle = `rgba(255, 255, 255, ${1-i/arr.length})`;
+            ctx.strokeStyle = `rgba(255, 255, 255, ${1-(0.75*i/arr.length)})`;
 
             ctx.beginPath();
             ctx.moveTo(lastx, lasty);
@@ -68,10 +68,6 @@ const drawingFromCircles = (ctx: CanvasRenderingContext2D, arr: Complex[]) => {
     }
 
     let t = 0;
-
-
-    let last = Date.now();
-    let start = last;
 
     const draw = () => {
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
